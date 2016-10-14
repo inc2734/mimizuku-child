@@ -1,0 +1,11 @@
+{
+  "require": {
+    "inc2734/mimizuku": "*",
+    "composer/installers": "^1.2"
+  },
+  "extra": {
+    "installer-paths": {
+      "../{$name}": ["type:wordpress-theme"]
+    }
+  }
+}
