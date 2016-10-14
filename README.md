@@ -9,8 +9,11 @@ This is a WordPress starter theme of Mimizuku child theme.
 * PHP 5.6+
 
 ## Get started
-1. `$ cd /PATH/TO/wp-content/themes`
-2. `$ git clone https://github.com/inc2734/mimizuku-child.git`
-3. `$ composer install`
-4. `$ npm install`
-5. `$ npm run gulp build`
+```
+$ cd /PATH/TO/wp-content/themes
+$ git clone https://github.com/inc2734/mimizuku-child.git
+$ cd mimizuku-child
+$ composer install
+$ npm install
+$ npm run gulp build
+```
