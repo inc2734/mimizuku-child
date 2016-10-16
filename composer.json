@@ -8,15 +8,23 @@
       "../{$name}": ["type:wordpress-theme"]
     }
   },
+  "config": {
+    "process-timeout": 600
+  },
   "scripts": {
     "build-mimizuku": [
       "cd ../mimizuku && composer install --no-dev && npm install && npm run gulp build"
     ],
+    "build-mimizuku-child": [
+      "npm install && npm run gulp build"
+    ],
     "post-install-cmd": [
-      "composer build-mimizuku"
+      "composer build-mimizuku",
+      "composer build-mimizuku-child"
     ],
     "post-update-cmd": [
-      "composer build-mimizuku"
+      "composer build-mimizuku",
+      "npm run gulp build"
     ]
   }
 }

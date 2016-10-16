@@ -17,9 +17,7 @@ This is a WordPress starter theme of Mimizuku child theme.
 $ cd /PATH/TO/wp-content/themes
 $ git clone https://github.com/inc2734/mimizuku-child.git your-theme-name
 $ cd your-theme-name
-$ composer install (and auto building Mimizuku)
-$ npm install
-$ npm run gulp build
+$ composer install (and auto building)
 $ wp theme activate your-theme-name
 ```
 
@@ -58,7 +56,11 @@ themes/your-theme-name/
 └── vendor                 # → (never edit)
 ```
 
-### View templates
+## Layout template
+
+The lyout template requires `<?php $this->view(); ?>`.
+
+## View templates
 
 ### In singular page
 
