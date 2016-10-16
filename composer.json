@@ -13,10 +13,10 @@
   },
   "scripts": {
     "build-mimizuku": [
-      "cd ../mimizuku && composer install --no-dev && npm install && npm run gulp build"
+      "current=$(cd $(dirname $0) && pwd) && cd ${current}/../mimizuku && composer install --no-dev && npm install && npm run gulp build"
     ],
     "build-mimizuku-child": [
-      "npm install && npm run gulp build"
+      "current=$(cd $(dirname $0) && pwd) && cd ${current}/ && npm install && npm run gulp build"
     ],
     "post-install-cmd": [
       "composer build-mimizuku",
