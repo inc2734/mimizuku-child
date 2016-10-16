@@ -7,5 +7,16 @@
     "installer-paths": {
       "../{$name}": ["type:wordpress-theme"]
     }
+  },
+  "scripts": {
+    "build-mimizuku": [
+      "cd ../mimizuku && composer install --no-dev && npm install && npm run gulp build"
+    ],
+    "post-install-cmd": [
+      "composer build-mimizuku"
+    ],
+    "post-update-cmd": [
+      "composer build-mimizuku"
+    ]
   }
 }
