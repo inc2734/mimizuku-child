@@ -35,6 +35,7 @@ themes/your-theme-name/
 ├── layout
 │   ├── wrapper            # → Layout templates
 │   ├── header             # → Header templates
+│   ├── sidebar            # → Sidebar templates
 │   └── footer             # → Footer templates
 ├── src                    # → Front-end assets
 │   ├── js
@@ -132,6 +133,16 @@ Filtering header layout file.
 ```
 add_filter( 'mimizuku_header', function( $header ) {
 	return $header;
+} );
+```
+
+### mimizuku_sidebar
+
+Filtering sidebar layout file.
+
+```
+add_filter( 'mimizuku_sidebar', function( $sidebar ) {
+	return $sidebar;
 } );
 ```
 
