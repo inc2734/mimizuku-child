@@ -13,10 +13,10 @@
   },
   "scripts": {
     "build-mimizuku": [
-      "current=$(cd $(dirname $0) && pwd) && cd ${current}/../mimizuku && composer install --no-dev && npm install && npm run gulp build"
+      "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer install --no-dev && npm install && npm run gulp build"
     ],
     "build-mimizuku-child": [
-      "current=$(cd $(dirname $0) && pwd) && cd ${current}/ && npm install && npm run gulp build"
+      "cd $(cd $(dirname $0) && pwd)/ && npm install && npm run gulp build"
     ],
     "post-install-cmd": [
       "composer build-mimizuku",
@@ -25,6 +25,11 @@
     "post-update-cmd": [
       "composer build-mimizuku",
       "npm run gulp build"
-    ]
+    ],
+    "scaffold-tests": "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer scaffold-tests",
+    "theme-unit-test": "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer theme-unit-test",
+    "theme-unit-test-ja": "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer theme-unit-test-ja",
+    "wpphpunit": "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer wpphpunit",
+    "phpunit": "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer phpunit"
   }
 }
