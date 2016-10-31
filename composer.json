@@ -5,11 +5,12 @@
   },
   "extra": {
     "installer-paths": {
-      "../{$name}": ["type:wordpress-theme"]
+      "../{$name}": ["type:wordpress-theme"],
+      "../../plugins/{$name}": ["type:wordpress-plugin"]
     }
   },
   "config": {
-    "process-timeout": 600
+    "process-timeout": 0
   },
   "scripts": {
     "build-mimizuku": [
@@ -26,10 +27,10 @@
       "composer build-mimizuku",
       "npm run gulp build"
     ],
-    "scaffold-tests": "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer scaffold-tests",
-    "theme-unit-test": "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer theme-unit-test",
-    "theme-unit-test-ja": "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer theme-unit-test-ja",
-    "wpphpunit": "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer wpphpunit",
-    "phpunit": "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer phpunit"
+    "scaffold-tests": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/scaffold-tests.sh",
+    "theme-unit-test": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/theme-unit-test.sh",
+    "theme-unit-test-ja": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/theme-unit-test-ja.sh",
+    "wpphpunit": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/wpphpunit.sh",
+    "phpunit": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/phpunit.sh"
   }
 }
