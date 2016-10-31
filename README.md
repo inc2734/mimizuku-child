@@ -178,8 +178,6 @@ add_filter( 'mimizuku_support_ie9', function( $boolean ) {
 
 ## Shell Scripts
 
-**You need to enable this theme!**
-
 ### Start up built-in server
 ```
 # pwd → /PATH/TO/wp-content/themes/your-theme-name
@@ -205,4 +203,9 @@ $ composer wpphpunit
 #### Run phpunit only (If WordPress tests environment, auto generating)
 ```
 $ composer phpunit
+```
+
+### Run WorPress conding standard check, PHPMD, PHPUnit tests
+```
+$ composer test
 ```

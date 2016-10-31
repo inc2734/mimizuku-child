@@ -3,6 +3,11 @@
     "inc2734/mimizuku": "*",
     "composer/installers": "^1.2"
   },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "*",
+    "wp-coding-standards/wpcs": "*",
+    "phpmd/phpmd": "2.*"
+  },
   "extra": {
     "installer-paths": {
       "../{$name}": ["type:wordpress-theme"],
@@ -13,6 +18,11 @@
     "process-timeout": 0
   },
   "scripts": {
+    "test": [
+      "php vendor/bin/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php",
+      "vendor/bin/phpmd ./ text phpmd.ruleset.xml --suffixes php --exclude /vendor/,/tests/",
+      "bash app/bin/phpunit.sh"
+    ],
     "build-mimizuku": [
       "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer install --no-dev && npm install && npm run gulp build"
     ],
