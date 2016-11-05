@@ -37,6 +37,7 @@
       "composer build-mimizuku",
       "npm run gulp build"
     ],
+    "server": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/server.sh",
     "scaffold-tests": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/scaffold-tests.sh",
     "theme-unit-test": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/theme-unit-test.sh",
     "theme-unit-test-ja": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/theme-unit-test-ja.sh",

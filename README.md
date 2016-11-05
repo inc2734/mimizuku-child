@@ -49,6 +49,8 @@ themes/your-theme-name/
 ├── .gitignore
 ├── gulpfile.js
 ├── package.json
+├── codesniffer.ruleset.xml
+├── phpmd.ruleset.xml
 ├── style.css              # → (never edit)
 ├── style.min.css          # → (never edit)
 ├── editor-style.css       # → (never edit)
@@ -180,8 +182,7 @@ add_filter( 'mimizuku_support_ie9', function( $boolean ) {
 
 ### Start up built-in server
 ```
-# pwd → /PATH/TO/wp-content/themes/your-theme-name
-$ bash ../mimizuku/app/bin/server.sh
+$ composer server
 ```
 
 ### Import theme unit test data
