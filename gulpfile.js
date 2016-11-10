@@ -11,15 +11,18 @@ var babelify     = require('babelify');
 var source       = require('vinyl-source-stream');
 var browser_sync = require('browser-sync');
 var autoprefixer = require('autoprefixer');
+var rimraf       = require('rimraf');
 
 var dir = {
   src: {
-    css: 'src/stylus',
-    js : 'src/js'
+    css   : 'src/stylus',
+    js    : 'src/js',
+    images: 'src/images'
   },
   dist: {
-    css: './',
-    js : 'assets/js'
+    css   : './',
+    js    : 'assets/js',
+    images: 'assets/images'
   }
 }
 
@@ -70,16 +73,36 @@ gulp.task('js', function() {
 });
 
 /**
+ * Remove images in assets directory
+ */
+gulp.task('remove-images', function(cb) {
+  rimraf(dir.dist.images, cb);
+});
+
+/**
+ * Copy images to assets directory
+ */
+gulp.task('copy-images',['remove-images'], function() {
+  return gulp.src(dir.src.images + '/**/*')
+    .pipe(gulp.dest(dir.dist.images));
+});
+
+/**
  * Build Mimizuku
  */
-gulp.task('build', ['css', 'js']);
+gulp.task('build', ['css', 'js', 'copy-images']);
 
 /**
  * browsersync
  */
 gulp.task('browsersync', function() {
   browser_sync.init({
-    proxy: '127.0.0.1:8080'
+    proxy: '127.0.0.1:8080',
+		files: [
+      '**/*.php',
+      dir.dist.js + '/app.min.js',
+      dir.dist.css + 'style.min.css'
+		]
   });
 });
 
@@ -89,14 +112,5 @@ gulp.task('browsersync', function() {
 gulp.task('default', ['build', 'browsersync'], function() {
   gulp.watch([dir.src.css + '/**/*.styl'], ['css']);
   gulp.watch([dir.src.js + '/**/*.js'] , ['js']);
-  gulp.watch(
-    [
-      '**/*.php',
-      dir.dist.js + '/app.min.js',
-      dir.dist.css + 'style.min.css'
-    ],
-    function() {
-      browser_sync.reload();
-    }
-  );
+  gulp.watch([dir.src.images + '/**/*'] , ['copy-images']);
 });

@@ -21,7 +21,7 @@
     "test": [
       "php vendor/bin/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php",
       "vendor/bin/phpmd ./ text phpmd.ruleset.xml --suffixes php --exclude /vendor/,/tests/",
-      "bash app/bin/phpunit.sh"
+      "composer phpunit"
     ],
     "build-mimizuku": [
       "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer install --no-dev && npm install && npm run gulp build"
