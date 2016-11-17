@@ -178,7 +178,7 @@ add_filter( 'mimizuku_support_ie9', function( $boolean ) {
 } );
 ```
 
-## Shell Scripts
+## Composer Scripts
 
 ### Start up built-in server
 ```
