@@ -206,7 +206,7 @@ $ composer wpphpunit
 $ composer phpunit
 ```
 
-### Run WorPress conding standard check, PHPMD, PHPUnit tests
+### Run WordPress Coding Standards check, PHPMD, PHPUnit tests
 ```
 $ composer test
 ```
