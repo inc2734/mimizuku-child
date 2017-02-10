@@ -35,7 +35,7 @@
     ],
     "post-update-cmd": [
       "composer build-mimizuku",
-      "yarn run gulp build"
+      "composer build-mimizuku-child"
     ],
     "server": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/server.sh",
     "scaffold-tests": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/scaffold-tests.sh",
