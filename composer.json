@@ -24,10 +24,10 @@
       "composer phpunit"
     ],
     "build-mimizuku": [
-      "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer install --no-dev && npm install && npm run gulp build"
+      "cd $(cd $(dirname $0) && pwd)/../mimizuku && composer install --no-dev && yarn install && yarn run gulp build"
     ],
     "build-mimizuku-child": [
-      "cd $(cd $(dirname $0) && pwd)/ && npm install && npm run gulp build"
+      "cd $(cd $(dirname $0) && pwd)/ && yarn install && yarn run gulp build"
     ],
     "post-install-cmd": [
       "composer build-mimizuku",
@@ -35,7 +35,7 @@
     ],
     "post-update-cmd": [
       "composer build-mimizuku",
-      "npm run gulp build"
+      "yarn run gulp build"
     ],
     "server": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/server.sh",
     "scaffold-tests": "bash $(cd $(dirname $0) && pwd)/../mimizuku/app/bin/scaffold-tests.sh",

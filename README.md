@@ -10,6 +10,7 @@ This is a WordPress starter theme of Mimizuku child theme.
 * WP-CLI
 * Composer
 * Node.js
+* Yarn
 
 ## Get started
 ### Install

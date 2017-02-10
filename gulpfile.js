@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp         = require('gulp');
-var stylus       = require('gulp-stylus');
+var sass         = require('gulp-sass');
 var postcss      = require('gulp-postcss');
 var cssnano      = require('cssnano');
 var rename       = require('gulp-rename');
@@ -17,12 +17,12 @@ var plumber      = require('gulp-plumber');
 
 var dir = {
   src: {
-    css   : 'src/stylus',
+    css   : 'src/css',
     js    : 'src/js',
     images: 'src/images'
   },
   dist: {
-    css   : './',
+    css   : 'assets/css',
     js    : 'assets/js',
     images: 'assets/images'
   }
@@ -32,14 +32,14 @@ var dir = {
  * Build CSS
  */
 gulp.task('css', function() {
-  return stylusCompile(dir.src.css + '/*.styl', dir.dist.css);
+  return sassCompile(dir.src.css + '/*.scss', dir.dist.css);
 });
 
-function stylusCompile(src, dest) {
+function sassCompile(src, dest) {
   return gulp.src(src)
     .pipe(plumber())
-    .pipe(stylus({
-      'resolve url nocheck': true
+    .pipe(sass({
+      includePaths: require('node-normalize-scss').includePaths
     }))
     .pipe(postcss([
       autoprefixer({
@@ -118,7 +118,7 @@ gulp.task('browsersync', function() {
 		files: [
       '**/*.php',
       dir.dist.js + '/app.min.js',
-      dir.dist.css + 'style.min.css'
+      dir.dist.css + '/style.min.css'
 		]
   });
 });
@@ -127,7 +127,7 @@ gulp.task('browsersync', function() {
  * Auto build and browsersync
  */
 gulp.task('default', ['build', 'browsersync'], function() {
-  gulp.watch([dir.src.css + '/**/*.styl'], ['css']);
+  gulp.watch([dir.src.css + '/**/*.scss'], ['css']);
   gulp.watch([dir.src.js + '/**/*.js'] , ['js']);
   gulp.watch([dir.src.images + '/**/*'] , ['copy-images']);
 });
