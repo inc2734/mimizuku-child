@@ -2,6 +2,7 @@
 
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
+var sassGlob     = require('gulp-sass-glob');
 var postcss      = require('gulp-postcss');
 var cssnano      = require('cssnano');
 var rename       = require('gulp-rename');
@@ -38,6 +39,7 @@ gulp.task('css', function() {
 function sassCompile(src, dest) {
   return gulp.src(src)
     .pipe(plumber())
+    .pipe(sassGlob())
     .pipe(sass({
       includePaths: require('node-normalize-scss').includePaths
     }))

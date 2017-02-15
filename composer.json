@@ -6,7 +6,8 @@
   "require-dev": {
     "squizlabs/php_codesniffer": "*",
     "wp-coding-standards/wpcs": "*",
-    "phpmd/phpmd": "2.*"
+    "phpmd/phpmd": "2.*",
+    "phpunit/phpunit": "^5.7"
   },
   "extra": {
     "installer-paths": {
@@ -19,6 +20,7 @@
   },
   "scripts": {
     "test": [
+			"vendor/bin/phpcs --config-set installed_paths vendor/wp-coding-standards/wpcs",
       "php vendor/bin/phpcs -p -s -v -n . --standard=./codesniffer.ruleset.xml --extensions=php",
       "vendor/bin/phpmd ./ text phpmd.ruleset.xml --suffixes php --exclude /vendor/,/tests/",
       "composer phpunit"

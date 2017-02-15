@@ -31,33 +31,31 @@ $ composer update inc2734/mimizuku
 ## Directory structure
 ```
 themes/your-theme-name/
-├── assets                 # → Built theme assets (never edit)
-│   └── js
+├── .editorconfig            # → Configulation for editors and IDEs
+├── .gitignore               # → Ignored file lists for Git
+├── assets                   # → Built theme assets (never edit)
+├── codesniffer.ruleset.xml  # → Codesniffer rulesets
+├── composer.json            # → Composer configuration
+├── composer.lock            # → Composer lock file (never edit)
+├── functions.php            # → The theme setup file.
+├── gulpfile.js              # → Gulp configuration
+├── node_modules             # → Node.js packages (never edit)
+├── package.json             # → Node.js dependencies and scripts
+├── phpmd.ruleset.xml        # → PHPMD rulesets
+├── README.md
+├── src                      # → Front-end assets
+├── style.css                # → Theme meta information
+├── vendor                   # → Composer packages (never edit)
+├── yarn.lock                # → Yarn lock file (never edit)
 ├── layout
-│   ├── wrapper            # → Layout templates
-│   ├── header             # → Header templates
-│   ├── sidebar            # → Sidebar templates
-│   └── footer             # → Footer templates
-├── src                    # → Front-end assets
-│   ├── js
-│   └── stylus
-├── composer.json
-├── functions.php
-├── views
-│   ├── archive            # → View templates for archive page
-│   ├── content            # → View templates for singular page
-│   └── static             # → Static view templates
-├── .gitignore
-├── gulpfile.js
-├── package.json
-├── codesniffer.ruleset.xml
-├── phpmd.ruleset.xml
-├── style.css              # → (never edit)
-├── style.min.css          # → (never edit)
-├── editor-style.css       # → (never edit)
-├── editor-style.min.css   # → (never edit)
-├── node_modules           # → (never edit)
-└── vendor                 # → (never edit)
+│   ├── wrapper              # → Layout templates
+│   ├── header               # → Header templates
+│   ├── sidebar              # → Sidebar templates
+│   └── footer               # → Footer templates
+└── views
+    ├── archive              # → View templates for archive page
+    ├── content              # → View templates for singular page
+    └── static               # → Static view templates
 ```
 
 ## Layout template

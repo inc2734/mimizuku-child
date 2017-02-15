@@ -14,6 +14,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-rollup": "^2.5.1",
     "gulp-sass": "^3.1.0",
+    "gulp-sass-glob": "^1.0.8",
     "gulp-stylus": "^2.6.0",
     "gulp-uglify": "^2.0.0",
     "node-normalize-scss": "^1.4.0",
