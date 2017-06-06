@@ -93,7 +93,7 @@ This is a function which to pass the variables to WordPress's `get_template_part
 
 ```
 // The caller
-\Mimizuku\App\Tags\get_template_part( 'path/to/template-parts', [
+mimizuku_get_template_part( 'path/to/template-parts', [
 	'_foo' => 'bar',
 	'_baz' => 'qux',
 ] );
