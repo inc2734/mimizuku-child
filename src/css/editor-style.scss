@@ -1,4 +1,6 @@
-@import 'style';
+@import 'foundation/setting/*';
+
+@import '../../../mimizuku/src/css/style';
 
 body {
 	margin: 10px;
