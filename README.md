@@ -6,6 +6,7 @@ This is a WordPress starter theme of Mimizuku child theme.
 * Mimizuku: https://github.com/inc2734/mimizuku/
 
 ## Requirements
+* WordPress 4.7
 * PHP 5.6+
 * WP-CLI
 * Composer
@@ -34,28 +35,25 @@ themes/your-theme-name/
 ├── .editorconfig            # → Configulation for editors and IDEs
 ├── .gitignore               # → Ignored file lists for Git
 ├── assets                   # → Built theme assets (never edit)
-├── codesniffer.ruleset.xml  # → Codesniffer rulesets
 ├── composer.json            # → Composer configuration
 ├── composer.lock            # → Composer lock file (never edit)
 ├── functions.php            # → The theme setup file.
 ├── gulpfile.js              # → Gulp configuration
 ├── node_modules             # → Node.js packages (never edit)
 ├── package.json             # → Node.js dependencies and scripts
-├── phpmd.ruleset.xml        # → PHPMD rulesets
 ├── README.md
 ├── src                      # → Front-end assets
 ├── style.css                # → Theme meta information
 ├── vendor                   # → Composer packages (never edit)
 ├── yarn.lock                # → Yarn lock file (never edit)
-├── layout
-│   ├── wrapper              # → Layout templates
-│   ├── header               # → Header templates
-│   ├── sidebar              # → Sidebar templates
-│   └── footer               # → Footer templates
-└── views
-    ├── archive              # → View templates for archive page
-    ├── content              # → View templates for singular page
-    └── static               # → Static view templates
+└── templates
+    ├── layout
+    │   ├── wrapper          # → Layout templates
+    │   ├── header           # → Header templates
+    │   ├── sidebar          # → Sidebar templates
+    │   └── footer           # → Footer templates
+    └── view                 # → View templates
+        └── static           # → Static view templates
 ```
 
 ## Layout template
@@ -66,28 +64,28 @@ The lyout template requires `<?php $this->view(); ?>`.
 
 ### In singular page
 
-Mimizuku loading `/views/content/content-{post-type}.php` for the view template.
-Loading `/views/content/content.php` when `/views/content/content-{post-type}.php` isn't exists.
+Mimizuku loading `/templates/view/content-{post-type}.php` for the view template.
+Loading `/templates/view/content.php` when `/templates/view/content-{post-type}.php` isn't exists.
 
 ### In archive page
 
-Mimizuku loading `/views/archive/archive-{post-type}.php` for the view template.
-Loading `/views/content/archive.php` when `/views/archive/archive-{post-type}.php` isn't exists.
+Mimizuku loading `/templates/view/archive-{post-type}.php` for the view template.
+Loading `/templates/view/archive.php` when `/templates/view/archive-{post-type}.php` isn't exists.
 
 ### Static view templates
 
-Mimizuku tries to load the view template according to the URL. For example when URL is http://example.com/foo/bar, tries to laod from `/views/static/foo/bar.php`.
+Mimizuku tries to load the view template according to the URL. For example when URL is http://example.com/foo/bar, tries to laod from `/templates/view/static/foo/bar.php`.
 
 ## Using view controller
 ```
-$controller = new \Mimizuku\App\Controllers\Controller();
+$controller = new Mimizuku_Controller();
 $controller->layout( 'right-sidebar' );
-$controller->render( 'content/content', 'news' );
+$controller->render( 'content', 'news' );
 ```
 
 ## Template tags
 
-### \\Mimizuku\\App\\Tags\\get_template_part()
+### mimizuku_get_template_part()
 
 This is a function which to pass the variables to WordPress's `get_template_part()`.
 

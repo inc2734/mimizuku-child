@@ -17,14 +17,14 @@ var babel        = require('rollup-plugin-babel');
 
 var dir = {
   src: {
-    css   : 'src/css',
-    js    : 'src/js',
-    images: 'src/images'
+    css: 'src/css',
+    js : 'src/js',
+    img: 'src/img'
   },
   dist: {
-    css   : 'assets/css',
-    js    : 'assets/js',
-    images: 'assets/images'
+    css: 'assets/css',
+    js : 'assets/js',
+    img: 'assets/img'
   }
 }
 
@@ -92,21 +92,21 @@ gulp.task('js', function() {
  * Remove images in assets directory
  */
 gulp.task('remove-images', function(cb) {
-  rimraf(dir.dist.images, cb);
+  rimraf(dir.dist.img, cb);
 });
 
 /**
  * Copy images to assets directory
  */
-gulp.task('copy-images',['remove-images'], function() {
-  return gulp.src(dir.src.images + '/**/*')
-    .pipe(gulp.dest(dir.dist.images));
+gulp.task('img', ['remove-images'], function() {
+  return gulp.src(dir.src.img + '/**/*')
+    .pipe(gulp.dest(dir.dist.img));
 });
 
 /**
  * Build Mimizuku
  */
-gulp.task('build', ['css', 'js', 'copy-images']);
+gulp.task('build', ['css', 'js', 'img']);
 
 /**
  * browsersync
@@ -128,5 +128,5 @@ gulp.task('browsersync', function() {
 gulp.task('default', ['build', 'browsersync'], function() {
   gulp.watch([dir.src.css + '/**/*.scss'], ['css']);
   gulp.watch([dir.src.js + '/**/*.js'] , ['js']);
-  gulp.watch([dir.src.images + '/**/*'] , ['copy-images']);
+  gulp.watch([dir.src.img + '/**/*'] , ['img']);
 });
