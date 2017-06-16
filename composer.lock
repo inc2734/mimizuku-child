@@ -123,22 +123,25 @@
         },
         {
             "name": "inc2734/mimizuku",
-            "version": "2.1.0",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inc2734/mimizuku.git",
-                "reference": "ade5bac1733160bf404c937794344c4acdc909bb"
+                "reference": "33807a25c3353deb82ba65ca280888c9c2437d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inc2734/mimizuku/zipball/ade5bac1733160bf404c937794344c4acdc909bb",
-                "reference": "ade5bac1733160bf404c937794344c4acdc909bb",
+                "url": "https://api.github.com/repos/inc2734/mimizuku/zipball/33807a25c3353deb82ba65ca280888c9c2437d6d",
+                "reference": "33807a25c3353deb82ba65ca280888c9c2437d6d",
                 "shasum": ""
             },
             "require": {
-                "inc2734/wp-breadcrumbs": "*",
-                "inc2734/wp-oembed-blog-card": "*",
-                "inc2734/wp-ogp": "*"
+                "inc2734/wp-basis": "~0.2.1",
+                "inc2734/wp-breadcrumbs": "~0.2.0",
+                "inc2734/wp-customizer-framework": "~1.0.0",
+                "inc2734/wp-oembed-blog-card": "~0.2.1",
+                "inc2734/wp-ogp": "~0.1.1",
+                "inc2734/wp-view-controller": "~0.1.0"
             },
             "require-dev": {
                 "phpmd/phpmd": "2.*",
@@ -164,7 +167,46 @@
                 }
             ],
             "description": "Minizuku is a WordPress theme framework for child themes development.",
-            "time": "2017-06-15 11:31:07"
+            "time": "2017-06-16 07:24:53"
+        },
+        {
+            "name": "inc2734/wp-basis",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inc2734/wp-basis.git",
+                "reference": "75c3b723ce5e0c07b402ac5c5eabfe8329966e9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inc2734/wp-basis/zipball/75c3b723ce5e0c07b402ac5c5eabfe8329966e9a",
+                "reference": "75c3b723ce5e0c07b402ac5c5eabfe8329966e9a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Inc2734\\WP_Basis\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Takashi Kitajima",
+                    "email": "inc@2inc.org"
+                }
+            ],
+            "description": "This library customizes HTML to use sass-basis in WordPress.",
+            "time": "2017-06-16 05:14:25"
         },
         {
             "name": "inc2734/wp-breadcrumbs",
@@ -204,6 +246,45 @@
             ],
             "description": "A library for WordPress breadcrumbs.",
             "time": "2017-06-13 03:25:15"
+        },
+        {
+            "name": "inc2734/wp-customizer-framework",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inc2734/wp-customizer-framework.git",
+                "reference": "4992245f12a011a5c2c21c2dd9b718fbc9e8c250"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inc2734/wp-customizer-framework/zipball/4992245f12a011a5c2c21c2dd9b718fbc9e8c250",
+                "reference": "4992245f12a011a5c2c21c2dd9b718fbc9e8c250",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Inc2734\\WP_Customizer_Framework\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Takashi Kitajima",
+                    "email": "inc@2inc.org"
+                }
+            ],
+            "description": "A library for WordPress Customizer.",
+            "time": "2017-06-16 06:59:47"
         },
         {
             "name": "inc2734/wp-oembed-blog-card",
@@ -282,6 +363,45 @@
             ],
             "description": "A library for WordPress OGP.",
             "time": "2017-06-13 05:18:31"
+        },
+        {
+            "name": "inc2734/wp-view-controller",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inc2734/wp-view-controller.git",
+                "reference": "f8d56771b143dc1475dbfeb222315216cced3eda"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inc2734/wp-view-controller/zipball/f8d56771b143dc1475dbfeb222315216cced3eda",
+                "reference": "f8d56771b143dc1475dbfeb222315216cced3eda",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Inc2734\\WP_View_Controller\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Takashi Kitajima",
+                    "email": "inc@2inc.org"
+                }
+            ],
+            "description": "A library for WordPress theme view controller.",
+            "time": "2017-06-16 01:22:51"
         }
     ],
     "packages-dev": [
